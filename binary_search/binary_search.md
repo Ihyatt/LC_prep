@@ -1,9 +1,7 @@
-"""
 Binary search to get lowest average within array
 
 https://leetcode.com/problems/koko-eating-bananas/
 https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/
-"""
 
 
 ```python
@@ -25,10 +23,27 @@ while lo <= hi:
   else:
     lowest = mid + 1
 
-      
+```
 
-  
+Find peak element in rotated sorted
 
+```
 
+#find peak element
+l, r = 0, len(nums) - 1
+boundary_idx = r 
+while l < r:
+    m = (l + r) // 2
+    if m != 0 and m != len(nums) - 1 and nums[m - 1] >= nums[m] <= nums[m + 1]:
+        boundary_idx = m
+        break
+    if nums[m] >= nums[l] and nums[m] <= nums[r]:
+        r = m - 1
+        boundary_idx = r
+    elif nums[l] >= nums[m] and nums[m] <= nums[r]:
+        r = m - 1
+        boundary_idx = r
+    else:
+        l = m + 1
 
 ```
